@@ -1,0 +1,39 @@
+<h1 class="my-3 text-primary">
+  Listar Produtos
+  <button type="button" routerLink="/product/cadastrar" class="btn btn-success mt-2 float-right" >Cadastrar</button>
+
+</h1>
+<div class="card shadow">
+  <table class="table table-responsive table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Custo</th>
+        <th>Preço</th>
+        <th>Locação</th>
+        <th>Estoque</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of listaProdutos">
+        <td>{{ list.id_produto }}</td>
+        <td>{{ list.nome }}</td>
+        <td>{{ list.custo }}</td>
+        <td>{{ list.preco }}</td>
+        <td>{{ list.id_locacao }}</td>
+        <td>{{ list.qtd_estoque }}</td>
+        
+        <td>
+          <button class="btn btn-warning" routerLink="/product/atualizar/{{list.id_produto}}">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-danger ml-2">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>  
+</div>

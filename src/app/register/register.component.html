@@ -1,0 +1,43 @@
+
+<br/>
+<br/>
+<br/>
+
+
+<div class="content">      
+    <!--FORMULÁRIO DE LOGIN-->
+    <div id="login">
+      <form method="post" action="" #form="ngForm" (ngSubmit)="signup(form)" novalidade > 
+        <h1>Crie sua conta !</h1> 
+        <p> 
+          <label for="email">Seu e-mail</label>
+          <input id="email" name="email" required="required" type="text" [(ngModel)]="user.email" #email="ngModel" placeholder="Digite o seu e-mail"/>
+        </p>
+
+          <div class="error" *ngIf="form.submitted && email.invalid">
+        
+            <p class="alert alert-danger" *ngIf="email.errors.required">Este campo é requerido !</p>
+            <p class="alert alert-danger" *ngIf="email.errors.email">E-mail inválido !</p>
+
+        </div>
+                 
+        <p> 
+          <label for="senha">Sua senha</label>
+          <input id="senha" name="senha" required="required" type="password" [(ngModel)]="user.senha" #senha="ngModel" placeholder="Digite a sua senha" /> 
+        </p>
+        
+        <div class="error" *ngIf="form.submitted && email.invalid">
+                            
+            <p class="alert alert-danger" *ngIf="password.errors.required">Este campo é requerido !</p>
+            <p class="alert alert-danger" *ngIf="password.errors.minlenght">Mínimo 6 caracteres !</p>
+
+        </div>
+         
+        <p> 
+            <input type="submit" value="Acessar" /> 
+        </p>
+                
+      </form>
+    </div>
+
+   
