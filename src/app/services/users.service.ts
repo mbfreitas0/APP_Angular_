@@ -31,6 +31,7 @@ export class UsersService {
     return { headers };
   }
 
+  // LOGIN NO APP
   public login(user: any) {
 
     let url = `${this.UrlApi}/${ApiRoutes.login}`;
@@ -38,6 +39,7 @@ export class UsersService {
     return this.http.post(url, JSON.stringify(user), this.loadHeaders());
   }
 
+  // BUSCAR TODOS USUARIOS
   public getUsers(id_usuario, token: string = '') {
 
     let url = `${this.UrlUser}/${ApiRoutes.users}/${id_usuario}`;
@@ -46,6 +48,7 @@ export class UsersService {
 
   }
 
+  // CRIAR USUARIO
   public create(user: any) {
 
     let url = `${this.UrlApi}/${ApiRoutes.signup}`;
@@ -53,6 +56,7 @@ export class UsersService {
     return this.http.post(url, JSON.stringify(user), this.loadHeaders());
 
   }
+  // DELETAR USUARIOS
   public delete(id_usuario, token: string = '') {
 
     let url: string = `${this.UrlUser}/${ApiRoutes.users}/${id_usuario}`
@@ -60,4 +64,6 @@ export class UsersService {
     return this.http.delete(url, this.loadHeaders(token));
   }  
 }
+
+
 

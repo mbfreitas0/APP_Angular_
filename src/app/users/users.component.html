@@ -18,8 +18,8 @@
       <tr *ngFor="let user of users['usuarios']">
         <td>{{ user.id_usuario }}</td>
         <td>{{ user.email }}</td>
-        
-        <td><button type="button" class="fa fa-pencil"></button></td>
+         
+        <td><button type="button" class="fa fa-pencil" routerLink="/produtos/atualizar-produto/{{ prod.id_produto }}"></button></td>
         <td><button type="button" class="btn btn-danger ml-2" (click) = "delete(user.id_usuario)" >Excluir</button></td>
       </tr>
       
