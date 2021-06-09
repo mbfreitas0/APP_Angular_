@@ -37,14 +37,14 @@ export class UsersComponent implements OnInit {
     this.router.navigate(['/login']); 
   }
   
-  public delete(id_usuario) {
+  private delete(id_usuario) { 
 
-    this.usersService.delete(id_usuario, this.token).subscribe(rs => {
+    this.usersService.delete(id_usuario, this.token).subscribe(rs => { 
      console.log(rs);
       this.users = this.users.filter(user => id_usuario != user.id_usuario);
         if(this.users.length < 1) {
           localStorage.removeItem('token');
-            this.router.navigate(['/'])
+            this.router.navigate(['/']);
 
       }
     });

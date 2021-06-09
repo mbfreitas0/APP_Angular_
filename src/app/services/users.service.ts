@@ -5,12 +5,12 @@ import { Router } from '@angular/router';
 
 const ApiRoutes = {
 
-  login:  'login',
-  signup: 'cadastro',
-  users:   'usuarios',
+  login:    'login',
+  signup:   'cadastro',
+  users:    'usuarios',
 };
 
-  @Injectable({
+   @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
@@ -20,7 +20,7 @@ export class UsersService {
   //URL exclusiva dos users//
   private UrlUser: string = 'http://localhost:3000';
 
-  
+   
   constructor(private http: HttpClient, private router: Router) { }
 
   private loadHeaders(token: string = '') {
@@ -40,11 +40,11 @@ export class UsersService {
   }
 
   // BUSCAR TODOS USUARIOS
-  public getUsers(id_usuario, token: string = '') {
+  public getUsers(token: string = '') {
 
-    let url = `${this.UrlUser}/${ApiRoutes.users}/${id_usuario}`;
+    let url = `${this.UrlUser}/${ApiRoutes.users}`;
 
-    return this.http.get<any>(url, this.loadHeaders(token));
+    return this.http.get<Array<any>>(url, this.loadHeaders(token));
 
   }
 
@@ -56,13 +56,14 @@ export class UsersService {
     return this.http.post(url, JSON.stringify(user), this.loadHeaders());
 
   }
+
   // DELETAR USUARIOS
   public delete(id_usuario, token: string = '') {
 
-    let url: string = `${this.UrlUser}/${ApiRoutes.users}/${id_usuario}`
+    let url: string = `${this.UrlUser}/${ApiRoutes.users}/${id_usuario}`;
 
     return this.http.delete(url, this.loadHeaders(token));
-  }  
+  }   
 }
 
 

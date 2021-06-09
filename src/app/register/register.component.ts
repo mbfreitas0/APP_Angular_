@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
 
     this.user = {
-      id_usuario: '', 
+      
       email:      '',
       senha:      '',
     };

@@ -37,12 +37,9 @@ export class LoginComponent implements OnInit {
           const response = await this.usersService.login(this.user).toPromise();
           
           if (response['token']) {
-            
-            const token = response['token'];
-
+              const token = response['token'];
               localStorage.setItem('token', token);
-
-              this.router.navigate[('/product')]
+              this.router.navigate(['/users']);
             
               //console.log('Seu token é: '+ token);
 

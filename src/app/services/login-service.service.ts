@@ -4,10 +4,10 @@ import { Router } from '@angular/router';
 
 
 const ApiRoutes = {
-  login: 'login',
-  signup: 'signup',
-  signout: 'signout',
-  user: 'user'
+  login:    'login',
+  signup:   'signup',
+  signout:  'signout',
+  user:     'user',
 
 };
 
