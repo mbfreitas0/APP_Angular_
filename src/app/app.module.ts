@@ -14,7 +14,8 @@ import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { AuthGuardService } from './guard/auth-guard.service';
 import { RegisterComponent } from './register/register.component';
-import { UserDetailsComponent } from './user/user-details/user-details.component';
+import { UserDetailsComponent } from '../app/users/user-details/user-details.component';
+import { UserDetaisComponent } from './users/user-detais/user-detais.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
     LoginComponent,
     UsersComponent,
     RegisterComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserDetaisComponent
   ],
   imports: [
     BrowserModule,

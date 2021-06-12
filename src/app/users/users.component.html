@@ -24,7 +24,7 @@
       <tr *ngFor="let user of users['usuarios']">
         <td>{{ user.id_usuario }}</td>
         <td>{{ user.email }}</td>
-        <td><button class="btn btn-warning">Ver mais</button></td> 
+        <td><button class="btn btn-warning" routerLink="/users/{{user.id_usuario}}">Ver mais</button></td>
         <td><button class="btn btn-danger"(click)="delete(user.id_usuario)">Excluir</button></td> 
       </tr>
     </tbody>

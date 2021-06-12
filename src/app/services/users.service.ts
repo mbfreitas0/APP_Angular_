@@ -5,9 +5,9 @@ import { Router } from '@angular/router';
 
 const ApiRoutes = {
 
-  login:    'login',
-  signup:   'cadastro',
-  users:    'usuarios',
+  login:  'login',
+  signup: 'cadastro',
+  users:  'usuarios',
 };
 
    @Injectable({
@@ -15,10 +15,10 @@ const ApiRoutes = {
 })
 export class UsersService {
 
-  private UrlApi: string = 'http://localhost:3000/usuarios';
+  private UrlUser: string = 'http://localhost:3000/usuarios';
 
   //URL exclusiva dos users//
-  private UrlUser: string = 'http://localhost:3000';
+  private UrlApi: string = 'http://localhost:3000';
 
    
   constructor(private http: HttpClient, private router: Router) { }
@@ -34,15 +34,16 @@ export class UsersService {
   // LOGIN NO APP
   public login(user: any) {
 
-    let url = `${this.UrlApi}/${ApiRoutes.login}`;
+    let url = `${this.UrlUser}/${ApiRoutes.login}`;
 
     return this.http.post(url, JSON.stringify(user), this.loadHeaders());
+    
   }
 
   // BUSCAR TODOS USUARIOS
   public getUsers(token: string = '') {
 
-    let url = `${this.UrlUser}/${ApiRoutes.users}`;
+    let url = `${this.UrlUser}`;
 
     return this.http.get<Array<any>>(url, this.loadHeaders(token));
 
@@ -51,19 +52,21 @@ export class UsersService {
   // CRIAR USUARIO
   public create(user: any) {
 
-    let url = `${this.UrlApi}/${ApiRoutes.signup}`;
+    let url = `${this.UrlUser}/${ApiRoutes.signup}`;
 
     return this.http.post(url, JSON.stringify(user), this.loadHeaders());
 
   }
 
   // DELETAR USUARIOS
-  public delete(id_usuario, token: string = '') {
+  public delete(id, token: string = '') {
 
-    let url: string = `${this.UrlUser}/${ApiRoutes.users}/${id_usuario}`;
+    let url: string = `${this.UrlUser}/${id}`;
 
     return this.http.delete(url, this.loadHeaders(token));
-  }   
+  }
+  
+  
 }
 
 

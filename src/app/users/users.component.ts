@@ -27,7 +27,7 @@ export class UsersComponent implements OnInit {
       }catch (error) {
 
         localStorage.removeItem('token');
-        this.router.navigate(['/']);
+        this.router.navigate(['/users']);
         
       } 
   }
@@ -37,14 +37,14 @@ export class UsersComponent implements OnInit {
     this.router.navigate(['/login']); 
   }
   
-  private delete(id_usuario) { 
+  private delete(id) { 
 
-    this.usersService.delete(id_usuario, this.token).subscribe(rs => { 
+    this.usersService.delete(id, this.token).subscribe(rs => { 
      console.log(rs);
-      this.users = this.users.filter(user => id_usuario != user.id_usuario);
+      this.users = this.users.filter(user => id != user.id_usuario);
         if(this.users.length < 1) {
           localStorage.removeItem('token');
-            this.router.navigate(['/']);
+            this.router.navigate(['/users']);
 
       }
     });
