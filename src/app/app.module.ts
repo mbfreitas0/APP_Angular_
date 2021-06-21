@@ -1,9 +1,10 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'  
 
 import { SharedModule } from './shared/shared.module';
@@ -15,7 +16,10 @@ import { UsersComponent } from './users/users.component';
 import { AuthGuardService } from './guard/auth-guard.service';
 import { RegisterComponent } from './register/register.component';
 import { UserDetailsComponent } from '../app/users/user-details/user-details.component';
-import { UserDetaisComponent } from './users/user-detais/user-detais.component';
+import { HomeComponent } from './home/home.component';
+import { ListarProdutosComponent } from './produtos/listar-produtos/listar-produtos.component';
+import { CadastrarProdutosComponent } from './produtos/cadastrar-produtos/cadastrar-produtos.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { UserDetaisComponent } from './users/user-detais/user-detais.component';
     UsersComponent,
     RegisterComponent,
     UserDetailsComponent,
-    UserDetaisComponent
+    HomeComponent,
+    ListarProdutosComponent,
+    CadastrarProdutosComponent
+
+    
   ],
   imports: [
     BrowserModule,
@@ -36,6 +44,7 @@ import { UserDetaisComponent } from './users/user-detais/user-detais.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot({ positionClass: 'inline' }),
     ToastContainerModule,
+    
   ],
 
   exports:[

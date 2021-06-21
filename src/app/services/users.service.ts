@@ -49,6 +49,15 @@ export class UsersService {
 
   }
 
+  // BUSCAR USUARIO PELO ID
+  public getUser(id_usuario, token: string = '') {
+
+    let url = `${this.UrlUser}/${id_usuario}`;
+
+    return this.http.get<any>(url, this.loadHeaders(token));
+
+  }
+
   // CRIAR USUARIO
   public create(user: any) {
 
@@ -56,6 +65,14 @@ export class UsersService {
 
     return this.http.post(url, JSON.stringify(user), this.loadHeaders());
 
+  }
+
+  // UPDATE USUARIO
+  public update(user:any, token: string = '') {
+
+    let url: string = `${this.UrlUser}/${user.id}`;
+
+    return this.http.put(url,JSON.stringify(user), this.loadHeaders(token));
   }
 
   // DELETAR USUARIOS

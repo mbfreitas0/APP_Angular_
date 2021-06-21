@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-12" style="text-align: right" >
-    <button type="button" class="btn btn-sm btn-outline-dark" (click)= "logout()">Logout</button>
+    <button type="button" class="btn btn-sm btn-outline-dark" (click)= "logout()"><i class="fas fa-power-off"></i>Logout</button>
     <hr />
   </div>
 <hr />
@@ -24,38 +24,10 @@
       <tr *ngFor="let user of users['usuarios']">
         <td>{{ user.id_usuario }}</td>
         <td>{{ user.email }}</td>
-        <td><button class="btn btn-warning" routerLink="/users/{{user.id_usuario}}">Ver mais</button></td>
+        <td><a routerLink="/users/{{ user.id_usuario }}" class="btn btn-link">Ver mais</a></td>
         <td><button class="btn btn-danger"(click)="delete(user.id_usuario)">Excluir</button></td> 
       </tr>
     </tbody>
     </table>
   </div>
 </div>
-
-
-
-<!--FORMULÁRIO DE CADASTRO-->
-<!-- <div id="cadastro">
-    <form method="post" action=""> 
-      <h1>Cadastro</h1> 
-       
-      <p> 
-        <label for="email_cad">Seu e-mail</label>
-        <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@htmlecsspro.com"/> 
-      </p>
-       
-      <p> 
-        <label for="senha_cad">Sua senha</label>
-        <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234"/>
-      </p>
-       
-      <p> 
-        <input type="submit" value="Cadastrar"/> 
-      </p>
-       
-      <p class="link">  
-        Já tem conta?
-        <a href="#paralogin"> Ir para Login </a>
-      </p>
-    </form>
-  </div> -->

@@ -1,1 +1,56 @@
-<p>user-details works!</p>
+<h4>Detalhes</h4>
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <tr>
+                <td><strong>ID</strong></td>
+                <td>{{ user.id_usuario }}</td>
+
+            </tr>
+            <tr>
+                <td><strong>E-mail</strong></td>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <td><strong>Senha</strong></td>
+                <td>{{ user.senha }}</td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="col-md-6">
+       
+        <form action="" method="post" #form="ngForm" (ngSubmit)="onSave(form)" novalidate>
+
+            <div class="form group">
+                <p>
+                    <label for="email">Seu e-mail </label>
+                    <input id="email" name="email" required="required" type="text" [(ngModel)]="user.email"
+                        #email="ngModel" placeholder="Digite o seu e-mail" value="{{ user.mail }}" required email />
+                </p>
+
+                <div class="error" *ngIf="form.submitted && email.invalid">
+                    <p class="alert alert-danger" *ngIf="email.errors.required">Este campo é requerido !</p>
+                    <p class="alert alert-danger" *ngIf="email.errors.required">E-mail inválido !</p>
+                </div>
+            </div>
+
+            <div class="form group">
+                <p>
+                    <label for="senha">Sua senha </label>
+                    <input id="senha" name="senha" required="required" type="password" [(ngModel)]="user.senha"
+                        #senha="ngModel" placeholder="Digite a sua senha" value="{{ user.senha }}" required password />
+                </p>
+
+                <div class="error" *ngIf="form.submitted && email.invalid">
+                    <p class="alert alert-danger" *ngIf="password.errors.required"> Este campo é requerido !</p>
+                    <p class="alert alert-danger" *ngIf="password.errors.minlenght"> Mínimo 6 caracteres !</p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="group">
+       <button type="submit" class="btn btn-info btn-sm btn-block">Salvar Modificações </button>
+    </div>
+</div>

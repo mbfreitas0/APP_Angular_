@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
           if (response['token']) {
               const token = response['token'];
               localStorage.setItem('token', token);
-              this.router.navigate(['/users']);
+              this.router.navigate(['/home']);
             
               //console.log('Seu token é: '+ token);
 
