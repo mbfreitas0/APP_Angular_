@@ -1,86 +1,56 @@
 <h1 class="my-3 text-primary">Cadastrar Produto</h1>
 <div class="card shadow">
-        <form class="m-3" method="post" action="" #form="ngForm" (ngSubmit)="salvarProduto(form)" novalidade>
+    <form [formGroup]="addForm" class="m-3" method="post" action="" (ngSubmit)="salvarProduto()" >
         <div class="row">
             <div class="col-md-12">
                 <label for="nome">Nome do Produto</label>
-                <input type="text" class="form-control" placeholder="Digite o nome do produto" name="nomeProduto" [(ngModel)]="produto.nome">
-
-            </div>
-        </div><!-- FIM ROW NOME -->
-        <div class="row">
-            <div class="col-md-6">
-                <label for="Id grupo">ID do Grupo</label>
-                <select class="form-select" aria-label="selecione grupo" name="grupo" [(ngModel)]="produto.id_grupo">
-                    <option selected>Escolha o Grupo</option>
-                    <option value="1">PANELA</option>
-                    <option value="2">FOGAO</option>
-                    <option value="3">MOVEIS</option>
-                    <option value="4">FERRAGENS</option>
-                    <option value="5">UTIL DOMESTICAS</option>
-                  </select>
-            </div>
-            <div class="col-md-6">
-                <label for="Id marca">ID da Marca</label>
-                <select class="form-select" aria-label="selecione grupo" name="marca" [(ngModel)]="produto.id_marca">
-                    <option selected>Escolha o Grupo</option>
-                    <option value="1">CLOCK</option>
-                    <option value="2">EMPRESS</option>
-                    <option value="3">ERILAR</option>
-                    <option value="4">FULGOR</option>
-                    <option value="5">GLOBO</option>
-                    <option value="6">LARES</option>
-                    <option value="7">MARMICOC</option>
-                    <option value="8">NIGRO</option>
-                    <option value="9">ROCHEDO</option>
-                    <option value="10">PANEX</option>
-                    <option value="11">PENEDO</option>
-                    <option value="12">TRAMONTINA</option>
-                    <option value="13">DAKO</option>
-                    <option value="14">BRASTEMP</option>
-                    <option value="15">ARNO</option>
-                    <option value="16">PHILCO</option>
-                    <option value="17">BRITANIA</option>
-                    <option value="18">GEN PANELA</option>
-                    <option value="19">GEN FOGAO</option>
-                    <option value="20">GEN MOVEIS</option>
-                    <option value="21">GEN FERRAGENS</option>
-                    <option value="22">GEN UTIL DOMEST</option>
-
-                  </select>
-            </div>
-        </div><!-- FIM ROW GRUPO E MARCA -->
+                <input type="text" class="form-control" placeholder="Digite o nome do produto" formControlName="nome" name="nome">
+            </div><!-- FIM ROW NOME -->
+        </div>
         <div class="row">
             <div class="col-md-4">
+                <label for="Id grupo">ID do Grupo</label>
+                <input type="text" class="form-control" placeholder="Digite o grupo" formControlName="grupo" name="grupo">
+            </div>    
+        
+            <div class="col-md-4">
+                <label for="Id grupo">ID da Marca</label>
+                <input type="text" class="form-control" placeholder="Digite a marca" formControlName="marca" name="marca">
+            </div>    
+              <div class="col-md-4">
                 <label for="Id grupo">ID da Locação</label>
-                <input type="text" class="form-control" placeholder="Digite a Locação" name="locacao" [(ngModel)]="produto.id_locacao">
+                <input type="text" class="form-control" placeholder="Digite a Locação" formControlName="locacao" name="locacao">
             </div>
+        </div>
+        <div class="row">
             <div class="col-md-4">
                 <label for="custo">Custo</label>
-                <input type="text" class="form-control" placeholder="Digite o custo" name="custo" [(ngModel)]="produto.custo">
+                <input type="text" class="form-control" placeholder="Digite o custo" formControlName="custo" name="custo" >
             </div>
             <div class="col-md-4">
                 <label for="preco">Preço</label>
-                <input type="text" class="form-control" placeholder="Digite o preço" name="preco" [(ngModel)]="produto.preco">
+                <input type="text" class="form-control" placeholder="Digite o preço" formControlName="preco" name="preco" >
             </div>
-        </div><!-- FIM ROW LOCAÇÃO, CUSTO E PREÇO -->
+            <div class="col-md-4">
+                <label for="Id grupo">Qtde. Estoque</label>
+                <input type="text" class="form-control" placeholder="Digite a quantidade" formControlName="qtd_estoque" name="qtd_estoque">
+            </div>
+        </div><!-- FIM ROW LOCAÇÃO, CUSTO, PREÇO E ESTOQUE -->
         <div class="row">
-            
-                <div class="col-md-6">
-                    <label for="Id grupo">Qtde. Estoque</label>
-                    <input type="text" class="form-control" placeholder="Digite a quantidade" name="qtd_estoque" [(ngModel)]="produto.qtd_estoque">
-                </div>
-                <div class="col-md-6">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
                     <label for="formFile" class="form-label">Selecione a imagem do produto</label>
-                    <input class="form-control" type="file" id="formFile" name="imagem_produto" [(ngModel)]="produto.imagem_produto">
-                  </div>
-            
-        </div><!-- FIM ROW QTDE. ESTOQUE E UPLOAD IMAGEM -->
+                    <input class="form-control" type="file" id="formFile" formControlName="imagem_produto" name="imagem_produto">
+            </div>
+        </div>    
+        <!-- FIM ROW QTDE. ESTOQUE E UPLOAD IMAGEM -->
         <div class="row">
             <div class="col">
                 <button class="btn btn-default" routerLink="/produtos/listar-produtos">Voltar</button>
                 <button class="btn btn-success float-right">Salvar</button>
             </div>
         </div>
-    </form>
+    </form>    
 </div>

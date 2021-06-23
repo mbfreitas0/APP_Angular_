@@ -1,3 +1,4 @@
+import { TokenInterceptor } from './services/interceptor';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -52,7 +53,7 @@ import { CadastrarProdutosComponent } from './produtos/cadastrar-produtos/cadast
     
   ],
     
-  providers: [AuthGuardService],
+  providers: [AuthGuardService, {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

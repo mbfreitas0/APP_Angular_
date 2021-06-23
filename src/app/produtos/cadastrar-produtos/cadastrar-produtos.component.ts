@@ -1,4 +1,4 @@
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProdutosService } from './../../services/produtos.service';
 import { IProduto } from './../../models/IProduto.model';
@@ -28,56 +28,33 @@ export class CadastrarProdutosComponent implements OnInit {
 
   };
 
-  constructor(private produtosService: ProdutosService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private produtosService: ProdutosService, private router: Router) { }
 
-   ngOnInit():void {
-  }
+  addForm: FormGroup;
 
-  async salvarProduto(form: FormGroup) {
+   ngOnInit() {
 
-    if(form.valid) {
-
-      try {
-
-        const response = await this.produtosService.cadastrarProduto(this.produto).toPromise();
-          const token = response['token'];
-            localStorage.getItem('token');  
-              this.router.navigate(['/produtos/listar-produtos']);
-        return alert("Produto Criado com Sucesso !"); 
-  
-      } catch (error) {
-        console.error(error)
-   
-      }
-
-    }
-    return alert("Dados inválidos !");
+    this.addForm = this.formBuilder.group({
+      id_produto: [],
+      id_grupo: ['', Validators.required],
+      id_marca: ['', Validators.required],
+      id_locacao: ['', Validators.required],
+      nome: ['', Validators.required],
+      custo: ['', Validators.required],
+      preco: ['', Validators.required],
+      qtd_estoque: ['', Validators.required],
+      imagem_produto: ['', Validators.required]
+    });
 
   }
 
-}
-  
+  salvarProduto( ) {
 
-  /*salvarProduto(): void {
-    this.produtosService.cadastrarProduto(this.produto).subscribe(retorno => {
-      this.produto = retorno;
-      this.produtosService.exibirMensagem('SISTEMA',`${this.produto.nome} foi cadastrado com sucesso. ID ${this.produto.id_produto}`,
-      'toast-success'
-      );
-      this.router.navigate(['/produtos']);
+    this.produtosService.cadastrarProduto(this.addForm.value)
+    .subscribe( data => {
+      this.router.navigate(['produtos/listar-produtos']);
     });
   }
-} */
-  
-   /*  */
 
-/*
-criarUsuario(usuario: UsuariosModel){
-  return this.httpClient.post(`${API}Usuarios`, user, this.httpOptions)
 }
-
-*/
-
-    
-
 

@@ -12,14 +12,24 @@ import { UserDetailsComponent } from '../users/user-details/user-details.compone
 
 const routes: Routes = [
     
-  { path:'', canActivate:[AuthGuardService],component: HomeComponent  },
+  { path:'', component: HomeComponent  },
+  { path:'home', component: HomeComponent  },
+  { path:'login', component: LoginComponent  },
+  { path:'users', component: UsersComponent },
+  { path:'users/:id_usuario', component: UserDetailsComponent },
+  { path:'register', component: RegisterComponent },
+  { path:'produtos/listar-produtos',component: ListarProdutosComponent  },
+  { path:'produtos/cadastrar', component: CadastrarProdutosComponent  },
+  
+  /* { path:'', canActivate:[AuthGuardService],component: HomeComponent  },
   { path:'home', canActivate:[AuthGuardService],component: HomeComponent  },
   { path:'login', component: LoginComponent  },
   { path:'users', canActivate:[AuthGuardService], component: UsersComponent },
   { path:'users/:id_usuario', canActivate:[AuthGuardService], component: UserDetailsComponent },
   { path:'register', component: RegisterComponent },
   { path:'produtos/listar-produtos', canActivate:[AuthGuardService],component: ListarProdutosComponent  },
-  { path:'produtos/cadastrar', canActivate:[AuthGuardService],component: CadastrarProdutosComponent  },
+  { path:'produtos/cadastrar', canActivate:[AuthGuardService],component: CadastrarProdutosComponent  }, */
+
 
   
 

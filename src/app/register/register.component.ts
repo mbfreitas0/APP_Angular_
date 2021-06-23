@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
 
         const response = await this.usersService.create(this.user).toPromise();
 
-        localStorage.removeItem('token');
+        //localStorage.removeItem('token');
 
           this.router.navigate(['/login']);
 
