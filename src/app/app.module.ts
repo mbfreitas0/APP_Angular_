@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { TokenInterceptor } from './services/interceptor';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,8 +20,8 @@ import { RegisterComponent } from './register/register.component';
 import { UserDetailsComponent } from '../app/users/user-details/user-details.component';
 import { HomeComponent } from './home/home.component';
 import { ListarProdutosComponent } from './produtos/listar-produtos/listar-produtos.component';
-import { CadastrarProdutosComponent } from './produtos/cadastrar-produtos/cadastrar-produtos.component';
-
+import { CadastrarProdutoComponent } from './produtos/cadastrar-produtos/cadastrar-produtos.component';
+import { AtualizarProdutoComponent } from './produtos/atualizar-produto/atualizar-produto.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +32,13 @@ import { CadastrarProdutosComponent } from './produtos/cadastrar-produtos/cadast
     UserDetailsComponent,
     HomeComponent,
     ListarProdutosComponent,
-    CadastrarProdutosComponent
+    CadastrarProdutoComponent,
+    AtualizarProdutoComponent
 
     
   ],
   imports: [
+    
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

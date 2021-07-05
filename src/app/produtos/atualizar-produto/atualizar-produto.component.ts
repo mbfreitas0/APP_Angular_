@@ -1,16 +1,15 @@
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ProdutosService } from './../../services/produtos.service';
+import { Router, ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { IProduto } from './../../models/IProduto.model';
+import { ProdutosService } from './../../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 
 
 @Component({
-  selector: 'app-cadastrar-produtos',
-  templateUrl: './cadastrar-produtos.component.html',
-  styleUrls: ['./cadastrar-produtos.component.css']
+  selector: 'app-atualizar-produto',
+  templateUrl: './atualizar-produto.component.html',
+  styleUrls: ['./atualizar-produto.component.css']
 })
-export class CadastrarProdutoComponent implements OnInit {
+export class AtualizarProdutoComponent implements OnInit {
 
   private token = `bearer ${localStorage.getItem('token')}`;
 
@@ -28,9 +27,16 @@ export class CadastrarProdutoComponent implements OnInit {
                                
 }
 
-  constructor(private produtosService: ProdutosService, private router: Router) { }
+  constructor(
+    private produtosService: ProdutosService, 
+    private router: Router, 
+    private activatedRouter: ActivatedRoute) { }
 
     ngOnInit(): void {
+      const id = Number(this.activatedRouter.snapshot.paramMap.get('id'));
+      this.produtosService.buscarPorId(id).subscribe(retorno => {
+          this.produto = retorno;
+      });
 
     }
 
@@ -51,4 +57,3 @@ export class CadastrarProdutoComponent implements OnInit {
   }
 
 }
-

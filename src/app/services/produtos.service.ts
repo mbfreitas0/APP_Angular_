@@ -1,3 +1,4 @@
+
 import { IProduto } from './../models/IProduto.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -25,50 +26,66 @@ export class ProdutosService {
 
   // BUSCAR TODOS PRODUTOS
   buscarTodosProdutos(): Observable<IProduto[]> {
-    
-    return this.http.get<IProduto[]>( this.URL ).pipe(
-       map(retorno => retorno),
-       catchError(erro => this.exibeErro(erro))
-    ); 
+
+    return this.http.get<IProduto[]>(this.URL).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibeErro(erro))
+    );
+
+  }
+  // BUSCAR PRODUTO PELO ID
+  buscarPorId(id: number): Observable<IProduto> {
+
+    return this.http.get<IProduto>(`${this.URL}/${id}`).pipe(
+      map(retorno => retorno),
+
+      catchError(erro => this.exibeErro(erro))
+
+    );
 
   }
 
   // GRAVAR PRODUTO
+  atualizarProduto(produto: IProduto): Observable<IProduto> {
 
-  cadastrarProduto(produto: IProduto) {
-    
-    let url = `${this.URL}`;
-
-    return this.http.post(url, JSON.stringify(produto), this.loadHeaders());
-   
-   
-    /* return this.http.post<IProduto>( this.URL, produto) ).pipe(
+    return this.http.put<IProduto>(`${this.URL}/${produto.id}`, produto).pipe(
       map(retorno => retorno),
-      catchError(erro => this.exibeErro(erro)) 
+      catchError(erro => this.exibeErro(erro))
 
-    );*/
-       
+    );
+
   }
 
-  /* cadastrarProduto(produto: IProduto) {
+  // GRAVAR PRODUTO
+  cadastrarProduto(produto: IProduto): Observable<IProduto> {
 
-    let url = `${this.URL}`;
-
-    return this.http.post(url, JSON.stringify(produto), this.loadHeaders());
-
-  } */
-
-  
-  
-
-  /* cadastrarProduto(produto: IProduto) {
     return this.http.post<IProduto>(this.URL, produto).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibeErro(erro))
-   );  
-      
-  }; */
 
+    );
+
+  }
+
+  // ALTERAR PRODUTO
+  alterarProduto(produto: IProduto) {
+
+    return this.http.put<IProduto>(this.URL + produto.id, produto).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibeErro(erro))
+
+    );
+
+  }
+
+  // DELETAR PRODUTO
+  deletarProduto(produto: IProduto) {
+
+    return this.http.delete<IProduto>(this.URL + produto.id);
+    catchError(erro => this.exibeErro(erro))
+
+  }
+    
   exibeErro(e: any): Observable<any> {
      this.exibirMensagem ('ERRO !!!  ', 'Não foi possível realizar a operação !', 'toastr-error');
      return EMPTY;
