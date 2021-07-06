@@ -23,6 +23,9 @@ import { ListarProdutosComponent } from './produtos/listar-produtos/listar-produ
 import { CadastrarProdutoComponent } from './produtos/cadastrar-produtos/cadastrar-produtos.component';
 import { AtualizarProdutoComponent } from './produtos/atualizar-produto/atualizar-produto.component';
 import { UppercaseDirective } from './directives/uppercase.directive';
+import { CadastrarFornecComponent } from './fornecedores/cadastrar-fornec/cadastrar-fornec.component';
+import { CadastrarClientesComponent } from './clientes/cadastrar-clientes/cadastrar-clientes.component';
+import { CadastrarClientepjComponent } from './clientepj/cadastrar-clientepj/cadastrar-clientepj.component';
 
 
 
@@ -37,7 +40,10 @@ import { UppercaseDirective } from './directives/uppercase.directive';
     ListarProdutosComponent,
     CadastrarProdutoComponent,
     AtualizarProdutoComponent,
-    UppercaseDirective
+    UppercaseDirective,
+    CadastrarFornecComponent,
+    CadastrarClientesComponent,
+    CadastrarClientepjComponent
       
 
     

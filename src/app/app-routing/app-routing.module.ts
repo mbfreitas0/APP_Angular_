@@ -1,3 +1,6 @@
+import { CadastrarFornecComponent } from './../fornecedores/cadastrar-fornec/cadastrar-fornec.component';
+import { CadastrarClientesComponent } from './../clientes/cadastrar-clientes/cadastrar-clientes.component';
+import { CadastrarClientepjComponent } from './../clientepj/cadastrar-clientepj/cadastrar-clientepj.component';
 import { AtualizarProdutoComponent } from './../produtos/atualizar-produto/atualizar-produto.component';
 import { CadastrarProdutoComponent } from './../produtos/cadastrar-produtos/cadastrar-produtos.component';
 import { ListarProdutosComponent } from './../produtos/listar-produtos/listar-produtos.component';
@@ -11,6 +14,7 @@ import { AuthGuardService } from '../guard/auth-guard.service';
 import { RegisterComponent } from '../register/register.component';
 import { UserDetailsComponent } from '../users/user-details/user-details.component';
 
+
 const routes: Routes = [
     
   { path:'', component: HomeComponent  },
@@ -22,6 +26,12 @@ const routes: Routes = [
   { path:'produtos/listar-produtos',component: ListarProdutosComponent  },
   { path:'produtos/atualizar/:id',component: AtualizarProdutoComponent},
   { path:'produtos/cadastrar', component: CadastrarProdutoComponent  },
+  { path:'clientespj/cadastrar', component: CadastrarClientepjComponent  },
+  //{ path:'clientepj/atualizar/:id',component: AtualizarClientepjComponent},
+  { path:'clientes/cadastrar', component: CadastrarClientesComponent  },
+  //{ path:'clientes/atualizar/:id', component: AtualizarClientesComponent  },
+  { path:'fornec/cadastrar', component: CadastrarFornecComponent  },
+  //{ path:'fornec/atualizar/:id', component: AtualizarFornecComponent  },
   
   /* { path:'', canActivate:[AuthGuardService],component: HomeComponent  },
   { path:'home', canActivate:[AuthGuardService],component: HomeComponent  },
