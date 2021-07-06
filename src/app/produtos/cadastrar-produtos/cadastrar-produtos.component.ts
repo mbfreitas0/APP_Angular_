@@ -1,3 +1,4 @@
+import { UppercaseDirective } from './../../directives/uppercase.directive';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProdutosService } from './../../services/produtos.service';
@@ -24,7 +25,7 @@ export class CadastrarProdutoComponent implements OnInit {
     status: null,
     descricao: null,
     estoque_min: null,
-    estoque_max: null,
+    estoque_max: null
                                
 }
 

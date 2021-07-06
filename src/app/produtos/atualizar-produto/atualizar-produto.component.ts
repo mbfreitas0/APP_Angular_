@@ -43,11 +43,11 @@ export class AtualizarProdutoComponent implements OnInit {
   salvarProduto( ):void {
 
     
-      this.produtosService.cadastrarProduto(this.produto).subscribe( retorno => {
+      this.produtosService.atualizarProduto(this.produto).subscribe( retorno => {
         this.produto = retorno;
           this.produtosService.exibirMensagem(
           'SISTEMA',
-          `${this.produto.descricao} foi cadastrado com sucesso. ID: ${this.produto.id}`,
+          `${this.produto.descricao} foi atualizado com sucesso.`,
           'toast-success' 
         );
         this.router.navigate(['produtos/listar-produtos']);

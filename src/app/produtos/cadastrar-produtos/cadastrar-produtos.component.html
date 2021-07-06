@@ -3,15 +3,28 @@
     <form class="m-3" method="post" action="/uploads" enctype = "multipart/form-data" >
         <div class="row">
             <div class="col-md-12">
-                <label for="nome">Descrição do Produto</label>
-                <input type="text" class="form-control" placeholder="Digite a descrição do produto" name="descricao" [(ngModel)]="produto.descricao">
+                <div class="form-group">
+                    <label for="nome">Descrição do Produto</label>
+                    <input
+                     type="text" 
+                     class="form-control" 
+                     placeholder="Digite a descrição do produto"
+                     name="descricao" 
+                     [(ngModel)]="produto.descricao" uppercase/>   
+                </div>
             </div><!-- FIM ROW NOME -->
         </div>
         <div class="row">
             <div class="col-md-4">
-                <label for="Id grupo">ID do Grupo</label>
-                <!-- <input type="text" class="form-control" id="id_grupo" placeholder="Digite o grupo" name="id_grupo" [(ngModel)]="produto.id_grupo"> -->
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="grupo" [(ngModel)]="produto.id_grupo">
+                <div class="form-group">
+                    <label for="Id grupo">ID do Grupo</label>
+                    <input 
+                    type="number" 
+                    class="form-control" 
+                    placeholder="Digite o grupo" 
+                    name="id_grupo" 
+                    [(ngModel)]="produto.id_grupo"/>
+                <!-- <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="grupo" [(ngModel)]="produto.id_grupo">
                     <option value="1">PANELA</option>
                     <option value="2">FOGÃO</option>
                     <option value="3">MÓVEIS</option>
@@ -20,13 +33,20 @@
                     <option value="6">CAFETEIRA</option>
                     <option value="7">CANECAO</option>
                     <option value="8">LEITEIRA</option> 
-                  </select>
+                </select> -->
+                </div>
             </div>    
         
             <div class="col-md-4">
-                <label for="Id grupo">ID da Marca</label>
-                <!-- <input type="text" class="form-control" id="id_marca" placeholder="Digite a marca" name="id_marca" [(ngModel)]="produto.id_marca"> -->
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="marca" [(ngModel)]="produto.id_marca">
+                <div class="form-group">
+                    <label for="Id grupo">ID da Marca</label>
+                <input 
+                type="number" 
+                class="form-control" 
+                placeholder="Digite a marca" 
+                name="id_marca" 
+                [(ngModel)]="produto.id_marca"/>
+                <!-- <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="marca" [(ngModel)]="produto.id_marca">
                     <option value="1">CLOCK</option>
                     <option value="2">EMPRESS</option>
                     <option value="3">ERILAR</option>
@@ -57,25 +77,54 @@
                     <option value="28">VALENCIA</option>
                     <option value="29">RENATA</option>
                     <option value="30">SUPRENS</option>
-                  </select>
+                  </select> -->
+                </div>
             </div>    
               <div class="col-md-4">
-                <label for="Id grupo">ID da Locação</label>
-                <input type="text" class="form-control" id="id_locacao" placeholder="Digite a Locação" name="id_locacao" [(ngModel)]="produto.id_locacao">
+                <div class="form-group">
+                    <label for="Id grupo">ID da Locação</label>
+                    <input 
+                    type="number" 
+                    class="form-control" 
+                    placeholder="Digite a Locação" 
+                    name="id_locacao" 
+                    [(ngModel)]="produto.id_locacao"/>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <label for="custo">Status</label>
-                <input type="text" class="form-control" id="status" placeholder="Digite o status A - Ativo e I - Inativo " name="status" [(ngModel)]="produto.status">
+                <div class="form-group">
+                    <label for="custo">Status</label>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Digite o status A - Ativo e I - Inativo " 
+                    name="status" 
+                    [(ngModel)]="produto.status" uppercase/>
+                </div>
             </div>
             <div class="col-md-4">
-                <label for="preco">Estoque Mínimo</label>
-                <input type="text" class="form-control" id="estoque_min" placeholder="Digite o estoque mínimo" name="estoque_min" [(ngModel)]="produto.estoque_min">
+                <div class="form-group">
+                    <label for="preco">Estoque Mínimo</label>
+                    <input 
+                    type="number" 
+                    class="form-control" 
+                    placeholder="Digite o estoque mínimo" 
+                    name="estoque_min" 
+                    [(ngModel)]="produto.estoque_min"/>
+                </div>
             </div>
             <div class="col-md-4">
-                <label for="Id grupo">Estoque Máximo</label>
-                <input type="text" class="form-control" id="estoque_max" placeholder="Digite o estoque máximo" name="estoque_max" [(ngModel)]="produto.estoque_max">
+                <div class="form-group">
+                    <label for="Id grupo">Estoque Máximo</label>
+                    <input 
+                    type="number" 
+                    class="form-control" 
+                    placeholder="Digite o estoque máximo" 
+                    name="estoque_max" 
+                    [(ngModel)]="produto.estoque_max"/>
+                </div>
             </div>   
         <!-- FIM ROW QTDE. ESTOQUE E UPLOAD IMAGEM -->
         <div class="row">

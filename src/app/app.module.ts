@@ -22,6 +22,9 @@ import { HomeComponent } from './home/home.component';
 import { ListarProdutosComponent } from './produtos/listar-produtos/listar-produtos.component';
 import { CadastrarProdutoComponent } from './produtos/cadastrar-produtos/cadastrar-produtos.component';
 import { AtualizarProdutoComponent } from './produtos/atualizar-produto/atualizar-produto.component';
+import { UppercaseDirective } from './directives/uppercase.directive';
+
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { AtualizarProdutoComponent } from './produtos/atualizar-produto/atualiza
     HomeComponent,
     ListarProdutosComponent,
     CadastrarProdutoComponent,
-    AtualizarProdutoComponent
+    AtualizarProdutoComponent,
+    UppercaseDirective
+      
 
     
   ],
