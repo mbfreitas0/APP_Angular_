@@ -9,7 +9,7 @@ import { map, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class ClientepjService {
+export class ClientesService {
 
   private URL: string = 'http://localhost:3000/clientes';
 

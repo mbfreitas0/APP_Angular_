@@ -1,3 +1,4 @@
+
 import { ActivatedRoute } from '@angular/router';
 import { TokenInterceptor } from './services/interceptor';
 
@@ -44,7 +45,7 @@ import { CadastrarClientepjComponent } from './clientepj/cadastrar-clientepj/cad
     CadastrarFornecComponent,
     CadastrarClientesComponent,
     CadastrarClientepjComponent
-      
+        
 
     
   ],
