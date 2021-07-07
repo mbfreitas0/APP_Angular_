@@ -38,7 +38,7 @@ export class CadastrarFornecComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  salvarProduto( ):void {
+  salvarFornecedor( ):void {
 
     
     this.fornecedoresService.cadastrar(this.fornecedor).subscribe( retorno => {

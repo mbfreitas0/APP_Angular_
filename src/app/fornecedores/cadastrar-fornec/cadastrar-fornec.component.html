@@ -106,9 +106,13 @@
                     placeholder="Digite o E-mail"
                     name="email" 
                     [(ngModel)]="fornecedor.email"/>
-
                 </div>
-
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-default" routerLink="/fornecedores/listar-fornec">Voltar</button>
+                <button class="btn btn-success float-right" (click)="salvarFornecedor()">Salvar</button>
             </div>
         </div>
 
