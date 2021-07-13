@@ -39,7 +39,7 @@ export class CadastrarProdutoComponent implements OnInit {
 
     
       this.produtosService.cadastrarProduto(this.produto).subscribe( retorno => {
-        this.produto = retorno;
+        this.produto = retorno['produto'];
           this.produtosService.exibirMensagem(
           'SISTEMA',
           `${this.produto.descricao} foi cadastrado com sucesso. ID: ${this.produto.id}`,

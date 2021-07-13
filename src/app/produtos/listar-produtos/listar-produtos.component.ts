@@ -19,7 +19,7 @@ export class ListarProdutosComponent implements OnInit {
   
   carregarProdutos(): void {
     this.produtosService.buscarTodosProdutos().subscribe(retorno => {
-      this.listaProdutos = retorno;
+      this.listaProdutos = retorno['produtos'];
     });
   }
 }

@@ -1,7 +1,5 @@
-
+import { Interceptor } from './services/interceptor';
 import { ActivatedRoute } from '@angular/router';
-import { TokenInterceptor } from './services/interceptor';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -27,6 +25,8 @@ import { UppercaseDirective } from './directives/uppercase.directive';
 import { CadastrarFornecComponent } from './fornecedores/cadastrar-fornec/cadastrar-fornec.component';
 import { CadastrarClientesComponent } from './clientes/cadastrar-clientes/cadastrar-clientes.component';
 import { CadastrarClientepjComponent } from './clientepj/cadastrar-clientepj/cadastrar-clientepj.component';
+import { ListarFornecComponent } from './fornecedores/listar-fornec/listar-fornec.component';
+import { AtualizarFornecComponent } from './fornecedores/atualizar-fornec/atualizar-fornec.component';
 
 
 
@@ -44,7 +44,10 @@ import { CadastrarClientepjComponent } from './clientepj/cadastrar-clientepj/cad
     UppercaseDirective,
     CadastrarFornecComponent,
     CadastrarClientesComponent,
-    CadastrarClientepjComponent
+    CadastrarClientepjComponent,
+    ListarFornecComponent,
+    AtualizarFornecComponent,
+
         
 
     
@@ -60,15 +63,18 @@ import { CadastrarClientepjComponent } from './clientepj/cadastrar-clientepj/cad
     BrowserAnimationsModule,
     ToastrModule.forRoot({ positionClass: 'inline' }),
     ToastContainerModule,
-    
+    Interceptor    
   ],
+  
 
   exports:[
     AppComponent,
     
   ],
     
-  providers: [AuthGuardService, {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}],
+  providers: [AuthGuardService,],
   bootstrap: [AppComponent]
+  /* providers: [AuthGuardService, {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}],
+  bootstrap: [AppComponent] */
 })
 export class AppModule { }

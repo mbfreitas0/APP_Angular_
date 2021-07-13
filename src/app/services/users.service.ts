@@ -15,7 +15,7 @@ const ApiRoutes = {
 })
 export class UsersService {
 
-  private UrlUser: string = 'http://localhost:3000/usuarios';
+  private UrlUser: string = 'http://localhost:3000/users';
 
   //URL exclusiva dos users//
   private UrlApi: string = 'http://localhost:3000';

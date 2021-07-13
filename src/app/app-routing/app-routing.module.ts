@@ -1,3 +1,5 @@
+import { AtualizarFornecComponent } from './../fornecedores/atualizar-fornec/atualizar-fornec.component';
+import { ListarFornecComponent } from './../fornecedores/listar-fornec/listar-fornec.component';
 import { CadastrarFornecComponent } from './../fornecedores/cadastrar-fornec/cadastrar-fornec.component';
 import { CadastrarClientesComponent } from './../clientes/cadastrar-clientes/cadastrar-clientes.component';
 import { CadastrarClientepjComponent } from './../clientepj/cadastrar-clientepj/cadastrar-clientepj.component';
@@ -7,12 +9,13 @@ import { ListarProdutosComponent } from './../produtos/listar-produtos/listar-pr
 import { HomeComponent } from './../home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CanActivate } from '@angular/router';
+//import { CanActivate } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { UsersComponent } from '../users/users.component';
-import { AuthGuardService } from '../guard/auth-guard.service';
+//import { AuthGuardService } from '../guard/auth-guard.service';
 import { RegisterComponent } from '../register/register.component';
 import { UserDetailsComponent } from '../users/user-details/user-details.component';
+
 
 
 const routes: Routes = [
@@ -31,7 +34,8 @@ const routes: Routes = [
   { path:'clientes/cadastrar', component: CadastrarClientesComponent  },
   //{ path:'clientes/atualizar/:id', component: AtualizarClientesComponent  },
   { path:'fornecedores/cadastrar', component: CadastrarFornecComponent  },
-  //{ path:'fornecedores/atualizar/:id', component: AtualizarFornecComponent  },
+  { path:'fornecedores/listar-fornec', component: ListarFornecComponent  },
+  { path:'fornecedores/atualizar/:id', component: AtualizarFornecComponent  },
   
   /* { path:'', canActivate:[AuthGuardService],component: HomeComponent  },
   { path:'home', canActivate:[AuthGuardService],component: HomeComponent  },

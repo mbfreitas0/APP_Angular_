@@ -1,0 +1,120 @@
+<h1 class="my-3 text-primary">Atualizar Fornecedor</h1>
+<div class="card    shadow">
+    <form class="m-3" method="POST">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="nome">Razão Social</label>
+                    <input
+                     type="text" 
+                     class="form-control" 
+                     placeholder="Digite a Razão Social"
+                     name="nome" 
+                     [(ngModel)]="fornecedor.nome" uppercase/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="nome">Endereço</label>
+                    <input
+                     type="text" 
+                     class="form-control" 
+                     placeholder="Digite o endereço"
+                     name="endereco" 
+                     [(ngModel)]="fornecedor.endereco" uppercase/>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="nome">CEP</label>
+                    <input
+                     type="text" 
+                     class="form-control" 
+                     placeholder="Digite o cep"
+                     name="cep" 
+                     [(ngModel)]="fornecedor.cep" mask="00000-000"/>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="nome">Cidade</label>
+                    <input
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Digite a cidade"
+                    name="cidade" 
+                    [(ngModel)]="fornecedor.cidade" uppercase/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="nome">UF</label>
+                    <input
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Digite o estado"
+                    name="uf" 
+                    [(ngModel)]="fornecedor.uf" uppercase/>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="nome">Telefone</label>
+                    <input
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Digite o telefone"
+                    name="telefone" 
+                    [(ngModel)]="fornecedor.telefone" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="nome">CNPJ</label>
+                    <input
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Digite o CNPJ"
+                    name="cpf" 
+                    [(ngModel)]="fornecedor.cnpj"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="nome">IE</label>
+                    <input
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Digite a IE"
+                    name="ie" 
+                    [(ngModel)]="fornecedor.ie"/>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="nome">E-mail</label>
+                    <input
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Digite o E-mail"
+                    name="email" 
+                    [(ngModel)]="fornecedor.email"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-default" routerLink="/fornecedores/listar-fornec">Voltar</button>
+                <button class="btn btn-success float-right" (click)="salvarFornecedor()">Salvar</button>
+            </div>
+        </div>
+
+    </form>
+</div>

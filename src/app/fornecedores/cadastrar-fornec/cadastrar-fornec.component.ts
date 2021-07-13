@@ -17,8 +17,7 @@ export class CadastrarFornecComponent implements OnInit {
   //*** DECLARAÇÃO DAS VARIÁVEIS *** //
 
   fornecedor: IFornecedor = {
-    
-    
+        
     nome: null,
     endereco: null,
     cep: null,
@@ -42,7 +41,7 @@ export class CadastrarFornecComponent implements OnInit {
 
     
     this.fornecedoresService.cadastrar(this.fornecedor).subscribe( retorno => {
-      this.fornecedor = retorno;
+      this.fornecedor = retorno['fornecedores'];
         this.fornecedoresService.exibirMensagem(
         'SISTEMA',
         `${this.fornecedor.nome} foi cadastrado com sucesso. ID: ${this.fornecedor.id}`,

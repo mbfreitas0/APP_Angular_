@@ -11,7 +11,7 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class FornecedoresService {
 
-  private URL: string = 'http://localhost:3000/forncecedores';
+  private URL: string = 'http://localhost:3000/fornecedores';
 
   constructor( private http: HttpClient, private toastr: ToastrService) { }
 
@@ -45,9 +45,9 @@ export class FornecedoresService {
   }
 
   // GRAVAR FORNECEDOR
-  cadastrar(cliente: IFornecedor): Observable<IFornecedor> {
+  cadastrar(fornecedor: IFornecedor): Observable<IFornecedor> {
 
-    return this.http.post<IFornecedor>(this.URL, cliente).pipe(
+    return this.http.post<IFornecedor>(this.URL, fornecedor).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibeErro(erro))
 
@@ -56,9 +56,9 @@ export class FornecedoresService {
   }
 
   // ALTERAR FORNECEDOR
-  alterar(cliente: IFornecedor) {
-
-    return this.http.put<IFornecedor>(this.URL + cliente.id, cliente).pipe(
+  alterar(fornecedor: IFornecedor): Observable<IFornecedor>{
+    
+      return this.http.put<IFornecedor>(`${this.URL}/${fornecedor.id}`, fornecedor).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibeErro(erro))
 
@@ -67,15 +67,15 @@ export class FornecedoresService {
   }
 
   // DELETAR FORNECEDOR
-  deletar(cliente: IFornecedor) {
+  deletar(fornecedor: IFornecedor) {
 
-    return this.http.delete<IFornecedor>(this.URL + cliente.id);
+    return this.http.delete<IFornecedor>(this.URL + fornecedor.id);
     catchError(erro => this.exibeErro(erro))
 
   }
     
   exibeErro(e: any): Observable<any> {
-     this.exibirMensagem ('ERRO !!!  ', 'Não foi possível realizar a operação !', 'toastr-error');
+     this.exibirMensagem ('ERRO !!!  ', 'Não foi possível realizar a operação ! ', 'toastr-error');
      return EMPTY;
   };
 

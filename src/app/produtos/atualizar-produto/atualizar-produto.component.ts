@@ -2,6 +2,7 @@ import { Router, ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router'
 import { IProduto } from './../../models/IProduto.model';
 import { ProdutosService } from './../../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -15,17 +16,19 @@ export class AtualizarProdutoComponent implements OnInit {
 
   //*** DECLARAÇÃO DAS VARIÁVEIS *** //
 
-  produto: IProduto = {
-    
+  produto = {} as IProduto;
+
+  /* produto: IProduto = {
+    id: null,
     id_grupo: null,
     id_marca: null,
     id_locacao: null,
     status: null,
     descricao: null,
     estoque_min: null,
-    estoque_max: null,
+    estoque_max: null
                                
-}
+} */
 
   constructor(
     private produtosService: ProdutosService, 
@@ -35,12 +38,14 @@ export class AtualizarProdutoComponent implements OnInit {
     ngOnInit(): void {
       const id = Number(this.activatedRouter.snapshot.paramMap.get('id'));
       this.produtosService.buscarPorId(id).subscribe(retorno => {
-          this.produto = retorno;
+          this.produto = retorno['produto'];
       });
 
     }
 
-  salvarProduto( ):void {
+
+
+  salvarProduto( ) {
 
     
       this.produtosService.atualizarProduto(this.produto).subscribe( retorno => {
