@@ -6,8 +6,8 @@ import { Router } from '@angular/router';
 const ApiRoutes = {
 
   login:  'login',
-  signup: 'cadastro',
-  users:  'usuarios',
+  signup: 'create',
+  users:  'users',
 };
 
    @Injectable({
