@@ -1,41 +1,26 @@
-import { AtualizarFornecComponent } from './../fornecedores/atualizar-fornec/atualizar-fornec.component';
-import { ListarFornecComponent } from './../fornecedores/listar-fornec/listar-fornec.component';
-import { CadastrarFornecComponent } from './../fornecedores/cadastrar-fornec/cadastrar-fornec.component';
-import { CadastrarClientesComponent } from './../clientes/cadastrar-clientes/cadastrar-clientes.component';
-import { CadastrarClientepjComponent } from './../clientepj/cadastrar-clientepj/cadastrar-clientepj.component';
-import { AtualizarProdutoComponent } from './../produtos/atualizar-produto/atualizar-produto.component';
-import { CadastrarProdutoComponent } from './../produtos/cadastrar-produtos/cadastrar-produtos.component';
-import { ListarProdutosComponent } from './../produtos/listar-produtos/listar-produtos.component';
-import { HomeComponent } from './../home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 //import { CanActivate } from '@angular/router';
-import { LoginComponent } from '../login/login.component';
-import { UsersComponent } from '../users/users.component';
+import { LoginComponent } from '../components/login/login.component';
+import { UsersComponent } from '../components/users/users.component';
 //import { AuthGuardService } from '../guard/auth-guard.service';
-import { RegisterComponent } from '../register/register.component';
-import { UserDetailsComponent } from '../users/user-details/user-details.component';
+import { RegisterComponent } from '../components/register/register.component';
+import { UserDetailsComponent } from '../components/users/user-details/user-details.component';
 
 
 
 const routes: Routes = [
     
-  { path:'', component: HomeComponent  },
-  { path:'home', component: HomeComponent  },
+  
   { path:'login', component: LoginComponent  },
   { path:'users', component: UsersComponent },
   { path:'users/:id_usuario', component: UserDetailsComponent },
   { path:'register', component: RegisterComponent },
-  { path:'produtos/listar-produtos',component: ListarProdutosComponent  },
-  { path:'produtos/atualizar/:id',component: AtualizarProdutoComponent},
-  { path:'produtos/cadastrar', component: CadastrarProdutoComponent  },
-  { path:'clientespj/cadastrar', component: CadastrarClientepjComponent  },
+  
   //{ path:'clientepj/atualizar/:id',component: AtualizarClientepjComponent},
-  { path:'clientes/cadastrar', component: CadastrarClientesComponent  },
+  
   //{ path:'clientes/atualizar/:id', component: AtualizarClientesComponent  },
-  { path:'fornecedores/cadastrar', component: CadastrarFornecComponent  },
-  { path:'fornecedores/listar-fornec', component: ListarFornecComponent  },
-  { path:'fornecedores/atualizar/:id', component: AtualizarFornecComponent  },
+  
   
   /* { path:'', canActivate:[AuthGuardService],component: HomeComponent  },
   { path:'home', canActivate:[AuthGuardService],component: HomeComponent  },

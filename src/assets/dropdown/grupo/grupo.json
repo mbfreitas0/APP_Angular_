@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "grupo": "PANELA"
+    },
+    {
+        "id": 2,
+        "grupo": "FOGÃO"
+    },
+    {
+        "id": 3,
+        "grupo": "MÓVEIS"
+    },
+    {
+        "id": 4,
+        "grupo": "FERRAGENS"
+    },
+    {
+        "id": 5,
+        "grupo": "UTIL DOMÉSTICAS"
+    },
+    {
+        "id": 6,
+        "grupo": "CAFETEIRA"
+    },
+    {
+        "id": 7,
+        "grupo": "CANECAO"
+    },
+    {
+        "id": 8,
+        "grupo": "LEITEIRA"
+    }
+]

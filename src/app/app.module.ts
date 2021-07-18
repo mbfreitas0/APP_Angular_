@@ -2,32 +2,26 @@ import { Interceptor } from './services/interceptor';
 import { ActivatedRoute } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'  
-
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from './components/shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
-
-import { LoginComponent } from './login/login.component';
-import { UsersComponent } from './users/users.component';
+import { LoginComponent } from './components/login/login.component';
+import { UsersComponent } from './components/users/users.component';
 import { AuthGuardService } from './guard/auth-guard.service';
-import { RegisterComponent } from './register/register.component';
-import { UserDetailsComponent } from '../app/users/user-details/user-details.component';
-import { HomeComponent } from './home/home.component';
-import { ListarProdutosComponent } from './produtos/listar-produtos/listar-produtos.component';
-import { CadastrarProdutoComponent } from './produtos/cadastrar-produtos/cadastrar-produtos.component';
-import { AtualizarProdutoComponent } from './produtos/atualizar-produto/atualizar-produto.component';
+import { RegisterComponent } from './components/register/register.component';
+import { UserDetailsComponent } from './components/users/user-details/user-details.component';
 import { UppercaseDirective } from './directives/uppercase.directive';
-import { CadastrarFornecComponent } from './fornecedores/cadastrar-fornec/cadastrar-fornec.component';
-import { CadastrarClientesComponent } from './clientes/cadastrar-clientes/cadastrar-clientes.component';
-import { CadastrarClientepjComponent } from './clientepj/cadastrar-clientepj/cadastrar-clientepj.component';
-import { ListarFornecComponent } from './fornecedores/listar-fornec/listar-fornec.component';
-import { AtualizarFornecComponent } from './fornecedores/atualizar-fornec/atualizar-fornec.component';
-
+import { DropdownService } from './services/dropdown.service';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FooterComponent } from './components/template/footer/footer.component';
+import { NavComponent } from './components/template/nav/nav.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { HeaderComponent } from './components/template/header/header.component';
 
 
 @NgModule({
@@ -37,18 +31,10 @@ import { AtualizarFornecComponent } from './fornecedores/atualizar-fornec/atuali
     UsersComponent,
     RegisterComponent,
     UserDetailsComponent,
-    HomeComponent,
-    ListarProdutosComponent,
-    CadastrarProdutoComponent,
-    AtualizarProdutoComponent,
     UppercaseDirective,
-    CadastrarFornecComponent,
-    CadastrarClientesComponent,
-    CadastrarClientepjComponent,
-    ListarFornecComponent,
-    AtualizarFornecComponent,
-
-        
+    FooterComponent,
+    NavComponent,
+    HeaderComponent     
 
     
   ],
@@ -63,7 +49,11 @@ import { AtualizarFornecComponent } from './fornecedores/atualizar-fornec/atuali
     BrowserAnimationsModule,
     ToastrModule.forRoot({ positionClass: 'inline' }),
     ToastContainerModule,
-    Interceptor    
+    Interceptor,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
+
   ],
   
 
@@ -72,7 +62,7 @@ import { AtualizarFornecComponent } from './fornecedores/atualizar-fornec/atuali
     
   ],
     
-  providers: [AuthGuardService,],
+  providers: [AuthGuardService, DropdownService],
   bootstrap: [AppComponent]
   /* providers: [AuthGuardService, {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}],
   bootstrap: [AppComponent] */

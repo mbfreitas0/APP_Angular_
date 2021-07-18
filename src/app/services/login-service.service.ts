@@ -16,12 +16,14 @@ const ApiRoutes = {
 })
 export class LoginServiceService {
 
-  private UrlApi: string = 'http://localhost:3000/usuarios';
+  private UrlApi: string = 'http://localhost:3000/users';
 
 
   constructor(private http: HttpClient, private router: Router) { }
 
   public login(user: any){
+    
+    console.log(user);
     
     let url = `${this.UrlApi}/${ApiRoutes.login}`;
 

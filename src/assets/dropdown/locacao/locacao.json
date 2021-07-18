@@ -1,0 +1,402 @@
+[
+    {
+        "id": 1,
+        "locacao": "A001"
+    },
+    {
+        "id": 2,
+        "locacao": "A002"
+    },
+    {
+        "id": 3,
+        "locacao": "A003"
+    },
+    {
+        "id": 4,
+        "locacao": "A004"
+    },
+    {
+        "id": 5,
+        "locacao": "A005"
+    },
+    {
+        "id": 6,
+        "locacao": "A006"
+    },
+    {
+        "id": 7,
+        "locacao": "A007"
+    },
+    {
+        "id": 8,
+        "locacao": "A008"
+    },
+    {
+        "id": 9,
+        "locacao": "A009"
+    },
+    {
+        "id": 10,
+        "locacao": "A010"
+    },
+    {
+        "id": 11,
+        "locacao": "A011"
+    },
+    {
+        "id": 12,
+        "locacao": "A012"
+    },
+    {
+        "id": 13,
+        "locacao": "A013"
+    },
+    {
+        "id": 14,
+        "locacao": "A014"
+    },
+    {
+        "id": 15,
+        "locacao": "A015"
+    },
+    {
+        "id": 16,
+        "locacao": "A016"
+    },
+    {
+        "id": 17,
+        "locacao": "A017"
+    },
+    {
+        "id": 18,
+        "locacao": "A018"
+    },
+    {
+        "id": 19,
+        "locacao": "A019"
+    },
+    {
+        "id": 20,
+        "locacao": "A020"
+    },
+    {
+        "id": 21,
+        "locacao": "A021"
+    },
+    {
+        "id": 22,
+        "locacao": "A022"
+    },
+    {
+        "id": 23,
+        "locacao": "A023"
+    },
+    {
+        "id": 24,
+        "locacao": "A024"
+    },
+    {
+        "id": 25,
+        "locacao": "A025"
+    },
+    {
+        "id": 26,
+        "locacao": "A026"
+    },
+    {
+        "id": 27,
+        "locacao": "A027"
+    },
+    {
+        "id": 28,
+        "locacao": "A028"
+    },
+    {
+        "id": 29,
+        "locacao": "A029"
+    },
+    {
+        "id": 30,
+        "locacao": "A030"
+    },
+    {
+        "id": 31,
+        "locacao": "A031"
+    },
+    {
+        "id": 32,
+        "locacao": "A032"
+    },
+    {
+        "id": 33,
+        "locacao": "A033"
+    },
+    {
+        "id": 34,
+        "locacao": "A034"
+    },
+    {
+        "id": 35,
+        "locacao": "A035"
+    },
+    {
+        "id": 36,
+        "locacao": "A036"
+    },
+    {
+        "id": 37,
+        "locacao": "A037"
+    },
+    {
+        "id": 38,
+        "locacao": "A038"
+    },
+    {
+        "id": 39,
+        "locacao": "A039"
+    },
+    {
+        "id": 40,
+        "locacao": "A040"
+    },
+    {
+        "id": 41,
+        "locacao": "A041"
+    },
+    {
+        "id": 42,
+        "locacao": "A042"
+    },
+    {
+        "id": 43,
+        "locacao": "A043"
+    },
+    {
+        "id": 44,
+        "locacao": "A043"
+    },
+    {
+        "id": 45,
+        "locacao": "A045"
+    },
+    {
+        "id": 46,
+        "locacao": "A046"
+    },
+    {
+        "id": 47,
+        "locacao": "A047"
+    },
+    {
+        "id": 48,
+        "locacao": "A048"
+    },
+    {
+        "id": 49,
+        "locacao": "A049"
+    },
+    {
+        "id": 50,
+        "locacao": "A050"
+    },
+    {
+        "id": 51,
+        "locacao": "A051"
+    },
+    {
+        "id": 52,
+        "locacao": "A052"
+    },
+    {
+        "id": 53,
+        "locacao": "A053"
+    },
+    {
+        "id": 54,
+        "locacao": "A054"
+    },
+    {
+        "id": 55,
+        "locacao": "A055"
+    },
+    {
+        "id": 56,
+        "locacao": "A056"
+    },
+    {
+        "id": 57,
+        "locacao": "A057"
+    },
+    {
+        "id": 58,
+        "locacao": "A058"
+    },
+    {
+        "id": 59,
+        "locacao": "A059"
+    },
+    {
+        "id": 60,
+        "locacao": "A060"
+    },
+    {
+        "id": 61,
+        "locacao": "A061"
+    },
+    {
+        "id": 62,
+        "locacao": "A062"
+    },
+    {
+        "id": 63,
+        "locacao": "A063"
+    },
+    {
+        "id": 64,
+        "locacao": "A064"
+    },
+    {
+        "id": 65,
+        "locacao": "A065"
+    },
+    {
+        "id": 66,
+        "locacao": "A066"
+    },
+    {
+        "id": 67,
+        "locacao": "A067"
+    },
+    {
+        "id": 68,
+        "locacao": "A068"
+    },
+    {
+        "id": 69,
+        "locacao": "A069"
+    },
+    {
+        "id": 70,
+        "locacao": "A070"
+    },
+    {
+        "id": 71,
+        "locacao": "A071"
+    },
+    {
+        "id": 72,
+        "locacao": "A072"
+    },
+    {
+        "id": 73,
+        "locacao": "A073"
+    },
+    {
+        "id": 74,
+        "locacao": "A074"
+    },
+    {
+        "id": 75,
+        "locacao": "A075"
+    },
+    {
+        "id": 76,
+        "locacao": "A076"
+    },
+    {
+        "id": 77,
+        "locacao": "A077"
+    },
+    {
+        "id": 78,
+        "locacao": "A078"
+    },
+    {
+        "id": 79,
+        "locacao": "A079"
+    },
+    {
+        "id": 80,
+        "locacao": "A080"
+    },
+    {
+        "id": 81,
+        "locacao": "A081"
+    },
+    {
+        "id": 82,
+        "locacao": "A082"
+    },
+    {
+        "id": 83,
+        "locacao": "A083"
+    },
+    {
+        "id": 84,
+        "locacao": "A084"
+    },
+    {
+        "id": 85,
+        "locacao": "A085"
+    },
+    {
+        "id": 86,
+        "locacao": "A086"
+    },
+    {
+        "id": 87,
+        "locacao": "A087"
+    },
+    {
+        "id": 88,
+        "locacao": "A088"
+    },
+    {
+        "id": 89,
+        "locacao": "A089"
+    },
+    {
+        "id": 90,
+        "locacao": "A090"
+    },
+    {
+        "id": 91,
+        "locacao": "A091"
+    },
+    {
+        "id": 92,
+        "locacao": "A092"
+    },
+    {
+        "id": 93,
+        "locacao": "A093"
+    },
+    {
+        "id": 94,
+        "locacao": "A094"
+    },
+    {
+        "id": 95,
+        "locacao": "A095"
+    },
+    {
+        "id": 96,
+        "locacao": "A096"
+    },
+    {
+        "id": 97,
+        "locacao": "A097"
+    },
+    {
+        "id": 98,
+        "locacao": "A098"
+    },
+    {
+        "id": 99,
+        "locacao": "A099"
+    },
+    {
+        "id": 100,
+        "locacao": "A100"
+    }
+]

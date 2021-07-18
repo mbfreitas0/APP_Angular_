@@ -60,18 +60,14 @@ export class UsersService {
 
   // CRIAR USUARIO
   public create(user: any) {
-
     let url = `${this.UrlUser}/${ApiRoutes.signup}`;
-
     return this.http.post(url, JSON.stringify(user), this.loadHeaders());
 
   }
 
   // UPDATE USUARIO
   public update(user:any, token: string = '') {
-
     let url: string = `${this.UrlUser}/${user.id}`;
-
     return this.http.put(url,JSON.stringify(user), this.loadHeaders(token));
   }
 

@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "marca": "CLOCK"
+    },
+    {
+        "id": 2,
+        "marca": "EMPRESS"
+    },
+    {
+        "id": 3,
+        "marca": "ERILAR"
+    },
+    {
+        "id": 4,
+        "marca": "FULGOR"
+    },
+    {
+        "id": 5,
+        "marca": "GLOBO"
+    },
+    {
+        "id": 6,
+        "marca": "LARES"
+    },
+    {
+        "id": 7,
+        "marca": "MARMICOC"
+    },
+    {
+        "id": 8,
+        "marca": "NIGRO"
+    },
+    {
+        "id": 9,
+        "marca": "ROCHEDO"
+    },
+    {
+        "id": 10,
+        "marca": "PANEX"
+    },
+    {
+        "id": 11,
+        "marca": "PENEDO"
+    },
+    {
+        "id": 12,
+        "marca": "TRAMONTINA"
+    },
+    {
+        "id": 13,
+        "marca": "DAKO"
+    },
+    {
+        "id": 14,
+        "marca": "BRASTEMP"
+    },
+    {
+        "id": 15,
+        "marca": "ARNO"
+    },
+    {
+        "id": 16,
+        "marca": "PHILCO"
+    },
+    {
+        "id": 17,
+        "marca": "BRITANIA"
+    },
+    {
+        "id": 18,
+        "marca": "UNIV PANELA"
+    },
+    {
+        "id": 19,
+        "marca": "UNIV FOGAO"
+    },
+    {
+        "id": 20,
+        "marca": "UNIV MOVEIS"
+    },
+    {
+        "id": 21,
+        "marca": "UNIV FERRAGENS"
+    },
+    {
+        "id": 22,
+        "marca": "UNIV UTIL DOMEST"
+    },
+    {
+        "id": 23,
+        "marca": "CAFETEIRA ITALIA"
+    },
+    {
+        "id": 24,
+        "marca": "UNIV CANECAO"
+    },
+    {
+        "id": 25,
+        "marca": "UNIV LEITEIRA"
+    },
+    {
+        "id": 26,
+        "marca": "IMAR"
+    },
+    {
+        "id": 27,
+        "marca": "ALCAST"
+    },
+    {
+        "id": 28,
+        "marca": "VALENCIA"
+    },
+    {
+        "id": 29,
+        "marca": "RENATA"
+    },
+    {
+        "id": 30,
+        "marca": "SUPRENS"
+    }
+]
