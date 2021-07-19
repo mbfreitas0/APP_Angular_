@@ -20,8 +20,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import { HeaderComponent } from './components/template/header/header.component';
+import { HomeComponent } from './views/home/home.component';
+import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import { HeaderComponent } from './components/template/header/header.component';
     UppercaseDirective,
     FooterComponent,
     NavComponent,
-    HeaderComponent     
+    HeaderComponent,
+    HomeComponent,
+    ProductCrudComponent     
 
     
   ],
@@ -52,7 +57,8 @@ import { HeaderComponent } from './components/template/header/header.component';
     Interceptor,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
 
   ],
   
