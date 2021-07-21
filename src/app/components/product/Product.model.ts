@@ -1,4 +1,4 @@
-export interface IProduto {
+export interface Product {
     
          id?: number;
          id_grupo: number;

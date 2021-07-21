@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-title>Novo Produto</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Descrição do produto" [(ngModel)]="product.descricao">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Grupo do produto" [(ngModel)]="product.id_grupo">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Marca do produto" [(ngModel)]="product.id_marca">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Locação do produto" [(ngModel)]="product.id_locacao">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Status do produto A - Ativo ou I - Inativo" [(ngModel)]="product.status">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Estoque Mínimo" [(ngModel)]="product.estoque_min">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Estoque Máximo" [(ngModel)]="product.estoque_max">
+        </mat-form-field>    
+    </form>
+    <button mat-raised-button (click)="createProduct()" color="primary">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
