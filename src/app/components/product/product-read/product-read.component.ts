@@ -1,38 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+//import { MatTable, MatTableDataSource } from '@angular/material/table';
+//import { MatSort } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { Product } from '../Product.model';
 import { ProductService } from '../product.service';
+//import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-product-read',
   templateUrl: './product-read.component.html',
   styleUrls: ['./product-read.component.css']
 })
+
 export class ProductReadComponent implements OnInit {
 
-  //product = {} as Product;
-  products: Product[]=[];
+  //product: Product = {} as Product;
+  products: Product[];
   
-  displayedColumns = ['id', 'id_grupo', 'id_marca', 'id_locacao' , 'status' ,'descricao', 'estoque_min', 'estoque_max'];
+  displayedColumns = ['id', 'status', 'descricao', 'id_locacao', 'estoque_min', 'estoque_max', 'action'];
+   
+  constructor(private productService: ProductService, private router: Router) { }
 
-  constructor(private productServe: ProductService, private router: Router) { }
 
   ngOnInit(): void {
-    this.readProduct();
-    
-    
-  }
 
-  readProduct(): void {
-    this.productServe.read().subscribe(products =>{
-      this.products = products
-      console.log(products);
-    })
-    
+    this.productService.read().subscribe(products => {
+      this.products = products;
+    }) 
 
   }
+  
   cancel(): void {
     this.router.navigate(['/products']);
   }
-
 }

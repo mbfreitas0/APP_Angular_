@@ -1,32 +1,141 @@
-<mat-card>
-    <mat-card-title>Novo Produto</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Descrição do produto" [(ngModel)]="product.descricao">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Grupo do produto" [(ngModel)]="product.id_grupo">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Marca do produto" [(ngModel)]="product.id_marca">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Locação do produto" [(ngModel)]="product.id_locacao">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Status do produto A - Ativo ou I - Inativo" [(ngModel)]="product.status">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Estoque Mínimo" [(ngModel)]="product.estoque_min">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Estoque Máximo" [(ngModel)]="product.estoque_max">
-        </mat-form-field>    
+<div class="card">
+    <h1 class="title">Novo Produto</h1>
+    <form [formGroup]="formProduct" class="form-control form-horizontal" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="descricao">Descrição</label>
+                <input class="form-control" id="descricao" type="text" formControlName="descricao"
+                    >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="grupo">Grupo</label>
+                <select name="id_grupo" id="id_grupo" class="form-control" formControlName="id_grupo"
+                    >
+                    <option *ngFor="let grupo of grupos | async" [value]="grupo.id">{{ grupo.grupo }}</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="marca">Marca</label>
+                <select name="id_marca" id="id_marca" class="form-control" formControlName="id_marca"
+                    >
+                    <option *ngFor="let marca of marcas | async" [value]="marca.id">{{ marca.marca }}</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="locacao">Locação</label>
+                <select name="id_locacao" id="id_locacao" class="form-control" formControlName="id_locacao"
+                    >
+                    <option *ngFor="let locacao of locacaos| async" [value]="locacao.id">{{ locacao.locacao }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4">
+                <label for="status">Status</label>
+                <input class="form-control" id="status" type="text" formControlName="status"
+                    >
+            </div>
+            <div class="col-md-4">
+                <label for="estoque_min">Estoque Mínimo</label>
+                <input class="form-control" id="estoque_min" type="text" formControlName="estoque_min"
+                    >
+            </div>
+            <div class="col-md-4">
+                <label for="estoque_max">Estoque Máximo</label>
+                <input class="form-control" id="estoque_max" type="text" formControlName="estoque_max"
+                    >
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Salvar</button>
+        <button type="button" class="btn btn-danger" (click)="cancel()">Cancelar</button>
+
     </form>
-    <button mat-raised-button (click)="createProduct()" color="primary">
-        Salvar
-    </button>
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
-</mat-card>
+
+</div>
+
+
+<!-- <mat-card>
+    <mat-card-title>Novo Produto</mat-card-title>
+    <form [formGroup]="criarProdForm" (ngSubmit)="createProduct()">
+        <mat-form-field>
+            <input matInput id="descricao" 
+            type="text" formControlName="descricao" 
+            name="descricao" 
+            placeholder="Descrição do produto" 
+            [(ngModel)]="product.descricao" 
+            matNativeControl required>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Grupo</mat-label>
+            <mat-select id="id_grupo" 
+            formControlName="id_grupo" 
+            name="id_grupo"
+            matNativeControl required>
+                <mat-option *ngFor="let grupo of grupos | async" [value]="grupo.id" >
+                  {{ grupo.grupo }}
+                </mat-option>
+              </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Marca</mat-label>
+            <mat-select id="id_marca" 
+            formControlName="id_marca"
+            name="id_marca" 
+            matNativeControl required>
+                <mat-option *ngFor="let marca of marcas | async" [value]="marca.id">
+                  {{ marca.marca }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Locacao</mat-label>
+            <mat-select matNativeControl required
+            name="id_locacao"
+            formControlName="id_locacao">
+                <mat-option *ngFor="let locacao of locacaos | async" [value]="locacao.id">
+                  {{ locacao.locacao }}
+                </mat-option>
+              </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput 
+            placeholder="Status do produto A - Ativo ou I - Inativo" 
+            [(ngModel)]="product.status" 
+            name="status" 
+            matNativeControl required>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput 
+            placeholder="Estoque Mínimo" 
+            [(ngModel)]="product.estoque_min" 
+            name="estoque_min" 
+            matNativeControl required>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput 
+            placeholder="Estoque Máximo" 
+            [(ngModel)]="product.estoque_max" 
+            name="estoque_max" 
+            matNativeControl required>
+        </mat-form-field>  
+        
+        <button mat-raised-button type="submit" color="primary">
+            Salvar
+        </button>
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    
+    </form> 
+    
+    
+</mat-card>-->

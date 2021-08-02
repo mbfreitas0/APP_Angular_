@@ -1,0 +1,147 @@
+<div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade" *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+        <a mat-flat-button color="primary" routerLink="/products">
+            <mat-icon>info</mat-icon>
+        </a>
+    </div>
+    <mat-card class="example-card">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <!-- Input Descrição do Produto -->
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Descrição do produto" formControlName="descricao"
+                    [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!form.get('descricao').valid">Por favor, a descrição do produto</span>
+                </mat-error>
+            </mat-form-field>
+            <!-- Input Grupo do Produto -->
+            <mat-form-field appearance="fill">
+            <mat-label>Grupo</mat-label>
+            <mat-select formControlName="id_grupo" name="id_grupo" >
+                <mat-option *ngFor="let grupo of grupos" [value]="grupo.value" [errorStateMatcher]="matcher">
+                  {{grupo.viewValue}}
+                </mat-option>
+                <mat-error>
+                    <span *ngIf="!form.get('id_grupo').valid">Por favor, o grupo do produto</span>
+                </mat-error>
+              </mat-select>
+            </mat-form-field>  
+            <!-- Input Marca do Produto -->
+            <mat-form-field appearance="fill">
+                <mat-label>Marca</mat-label>
+                <mat-select formControlName="id_marca" name="id_marca">
+                  <mat-option *ngFor="let marca of marcas" [value]="marca.value" [errorStateMatcher]="matcher">
+                    {{marca.viewValue}}
+                  </mat-option>
+                  <mat-error>
+                    <span *ngIf="!form.get('id_marca').valid">Por favor, a marca do produto</span>
+                </mat-error>
+                </mat-select>
+              </mat-form-field>
+            <!-- Input Locacao do Produto -->
+            <mat-form-field appearance="fill">
+                <mat-label>Locação</mat-label>
+                <mat-select formControlName="id_locacao" name="id_locacao">
+                  <mat-option *ngFor="let locacao of locacoes" [value]="locacao.value"[errorStateMatcher]="matcher">
+                    {{locacao.viewValue}}
+                  </mat-option>
+                  <mat-error>
+                    <span *ngIf="!form.get('id_locacao').valid">Por favor, a locação do produto</span>
+                </mat-error>
+                </mat-select>
+              </mat-form-field>
+            <!-- Input Status do Produto -->
+            <mat-form-field appearance="fill">
+                <mat-label>Cars</mat-label>
+                <select matNativeControl required>
+                  <option value="A">Ativo</option>
+                  <option value="I">Inativo</option>
+                </select>
+              </mat-form-field>
+            <!-- Input Estoque Minimo do Produto -->
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Estoque mínimo" formControlName="estoque_min"
+                    [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!form.get('estoque_min').valid">Please enter Product Price</span>
+                </mat-error>
+            </mat-form-field>
+            <!-- Input Estoque Máximo do Produto -->
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Estoque máximo" formControlName="estoque_max"
+                    [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!form.get('estoque_max').valid">Please enter Product Price</span>
+                </mat-error>
+            </mat-form-field>
+
+            <div class="button-row">
+                <button type="submit" [disabled]="!form.valid" mat-flat-button color="primary">
+                    <mat-icon>save</mat-icon>
+                </button>
+            </div>
+        </form>
+    </mat-card>
+</div>
+
+<!-- <div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+
+<div class="card">
+    <br />
+    <h1 class="title">Atualizar Produto</h1>
+    <br />
+    
+    <form [formGroup]="form" class="form-control form-horizontal" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="descricao">Descrição</label>
+                <input class="form-control" id="descricao" type="text" formControlName="descricao">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="grupo">Grupo</label>
+                <input id="id_grupo" class="form-control" formControlName="id_grupo">
+                
+            </div>
+            <div class="col-md-4">
+                <label for="marca">Marca</label>
+                <input id="id_marca" class="form-control" formControlName="id_marca">
+                
+            </div>
+            <div class="col-md-4">
+                <label for="locacao">Locação</label>
+                <input id="id_locacao" class="form-control" formControlName="id_locacao">
+                
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4">
+                <label for="status">Status</label>
+                <input class="form-control" id="status" type="text" formControlName="status">
+            </div>
+            <div class="col-md-4">
+                <label for="estoque_min">Estoque Mínimo</label>
+                <input class="form-control" id="estoque_min" name="estoque_min" type="text"
+                    formControlName="estoque_min">
+            </div>
+            <div class="col-md-4">
+                <label for="estoque_max">Estoque Máximo</label>
+                <input class="form-control" id="estoque_max" type="text" formControlName="estoque_max">
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Salvar</button>
+        <button type="button" class="btn btn-danger" (click)="cancel()">Cancelar</button>
+
+    </form>
+
+</div> -->
