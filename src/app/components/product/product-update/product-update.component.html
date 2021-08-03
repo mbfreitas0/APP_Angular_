@@ -9,6 +9,42 @@
     </div>
     <mat-card class="example-card">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
+             <!-- Input Grupo do Produto -->
+             <mat-form-field appearance="fill">
+                <mat-label>Grupo</mat-label>
+                <mat-select formControlName="id_grupo" name="id_grupo" >
+                    <mat-option *ngFor="let grupo of grupos" [value]="grupo.value" [errorStateMatcher]="matcher">
+                      {{grupo.viewValue}}
+                    </mat-option>
+                    <mat-error>
+                        <span *ngIf="!form.get('id_grupo').valid">Por favor, o grupo do produto</span>
+                    </mat-error>
+                  </mat-select>
+                </mat-form-field>  
+                <!-- Input Marca do Produto -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Marca</mat-label>
+                    <mat-select formControlName="id_marca" name="id_marca">
+                      <mat-option *ngFor="let marca of marcas" [value]="marca.value" [errorStateMatcher]="matcher">
+                        {{marca.viewValue}}
+                      </mat-option>
+                      <mat-error>
+                        <span *ngIf="!form.get('id_marca').valid">Por favor, a marca do produto</span>
+                    </mat-error>
+                    </mat-select>
+                  </mat-form-field>
+                <!-- Input Locacao do Produto -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Locação</mat-label>
+                    <mat-select formControlName="id_locacao" name="id_locacao">
+                      <mat-option *ngFor="let locacao of locacoes" [value]="locacao.value"[errorStateMatcher]="matcher">
+                        {{locacao.viewValue}}
+                      </mat-option>
+                      <mat-error>
+                        <span *ngIf="!form.get('id_locacao').valid">Por favor, a locação do produto</span>
+                    </mat-error>
+                    </mat-select>
+                  </mat-form-field>
 
             <!-- Input Descrição do Produto -->
             <mat-form-field class="example-full-width">
@@ -18,42 +54,7 @@
                     <span *ngIf="!form.get('descricao').valid">Por favor, a descrição do produto</span>
                 </mat-error>
             </mat-form-field>
-            <!-- Input Grupo do Produto -->
-            <mat-form-field appearance="fill">
-            <mat-label>Grupo</mat-label>
-            <mat-select formControlName="id_grupo" name="id_grupo" >
-                <mat-option *ngFor="let grupo of grupos" [value]="grupo.value" [errorStateMatcher]="matcher">
-                  {{grupo.viewValue}}
-                </mat-option>
-                <mat-error>
-                    <span *ngIf="!form.get('id_grupo').valid">Por favor, o grupo do produto</span>
-                </mat-error>
-              </mat-select>
-            </mat-form-field>  
-            <!-- Input Marca do Produto -->
-            <mat-form-field appearance="fill">
-                <mat-label>Marca</mat-label>
-                <mat-select formControlName="id_marca" name="id_marca">
-                  <mat-option *ngFor="let marca of marcas" [value]="marca.value" [errorStateMatcher]="matcher">
-                    {{marca.viewValue}}
-                  </mat-option>
-                  <mat-error>
-                    <span *ngIf="!form.get('id_marca').valid">Por favor, a marca do produto</span>
-                </mat-error>
-                </mat-select>
-              </mat-form-field>
-            <!-- Input Locacao do Produto -->
-            <mat-form-field appearance="fill">
-                <mat-label>Locação</mat-label>
-                <mat-select formControlName="id_locacao" name="id_locacao">
-                  <mat-option *ngFor="let locacao of locacoes" [value]="locacao.value"[errorStateMatcher]="matcher">
-                    {{locacao.viewValue}}
-                  </mat-option>
-                  <mat-error>
-                    <span *ngIf="!form.get('id_locacao').valid">Por favor, a locação do produto</span>
-                </mat-error>
-                </mat-select>
-              </mat-form-field>
+           
             <!-- Input Status do Produto -->
             <mat-form-field appearance="fill">
                 <mat-label>Cars</mat-label>
